@@ -1,10 +1,9 @@
 package com.rz;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class login
+ * Servlet implementation class uiupdatecarcountsale
  */
-@WebServlet("/login")
-public class login extends HttpServlet {
+@WebServlet("/uiupdatecarcountsale")
+public class uiupdatecarcountsale extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public login() {
+    public uiupdatecarcountsale() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,36 +30,26 @@ public class login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username=request.getParameter("username"); 
-		String password=request.getParameter("password"); 
-		DBHelper Dal=new DBHelper();
-		String strSql=" select * from tbusers where username='"+username+"' and password='"+password+"'"; 
+		// TODO Auto-generated method stub
+		String id=request.getParameter("id");
+		String countvalue=request.getParameter("countvalue");
+		String sessionid=request.getSession().getId();    
+		String strSql="update tbshoppingcarforsale set procount=? where sessionid=? and proid=? ";
+		DBHelper db=new DBHelper();
 		List<Object> params = new ArrayList<Object>();
-		List<Map<String, Object>> userlist = null;
-		try {
-			userlist=Dal.executeQuery(strSql, params);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		if(userlist.size()>0)
-		{
-			//currentmember
-			request.getSession().setAttribute("currentuser", userlist.get(0));
-			response.sendRedirect("/myerp/admin/default.jsp");
-			
-		}
-		else
-		{
-			request.setAttribute("msg", "用户名或密码错误");
-			request.getRequestDispatcher("/admin/login.jsp").forward(request, response);
-		}
+		params.add(countvalue);
+		params.add(sessionid);
+		params.add(id);
+		db.excuteSql(strSql, params);
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/json;charset=utf-8");
+		response.getWriter().write("{\"msg\":\"ok\"}");
 	}
 
 }
