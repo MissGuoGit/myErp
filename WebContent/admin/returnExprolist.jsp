@@ -32,7 +32,7 @@ String pagestr = (String)request.getAttribute("pagestr");
        		<td><%=m.get("tbcusadds")%></td>
        		<td><%=m.get("tbcurrtime")%></td>
        		<td><%=m.get("opttype")%></td>
-       		<td><a href="orderview?orderid=<%=m.get("orderid")%>">查看详细</a><a href="orderdelete?orderid=<%=m.get("orderid")%>">删除</a>  </td>
+       		<td><a href="returnorderdelete?id=<%=m.get("id")%>">删除</a></td>
        </tr>
     	<% } %>
     </table>

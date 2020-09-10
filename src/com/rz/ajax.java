@@ -51,8 +51,10 @@ public class ajax extends HttpServlet {
 		    case "6":getprotypehtmlforedit(request,response);break; 
 		    case "7":getproviewbynum(request,response);break; 
 		    case "8":addtocarbatch(request,response);break; 
-		    case "9":getSaleSumPricesByMonth(request,response);break; 
+		    case "9":getSaleSumPricesByMonth(request,response);break; //进货报表
 		    case "10":saleaddtocarbatch(request,response);break; 
+		    case "11":getSaleSumPricesByProduct(request,response);break;//销售报表 
+		    case "12":getSalereturnExByProduct(request,response);break;//退换货报表 
 		    default : break;
 		}
 		
@@ -66,7 +68,7 @@ public class ajax extends HttpServlet {
 		 * */
 		
 	}
-	//每月进货总金额报表
+	//9每月进货总金额报表
 	protected void getSaleSumPricesByMonth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String StrSql="SELECT DATE_FORMAT(ctime,'%Y-%m') as ctime,sum(sumprice) as sumprice FROM tborderhead where year(ctime)=? GROUP BY  ctime";
 		String cyear=request.getParameter("cyear");
@@ -105,6 +107,89 @@ public class ajax extends HttpServlet {
 		response.getWriter().write(html);
 		
 	}
+	
+	//11每月销售报表
+		protected void getSaleSumPricesByProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			//String StrSql="SELECT DATE_FORMAT(ctime,'%Y-%m') as ctime,sum(sumprice) as sumprice FROM tborderhead where year(ctime)=? GROUP BY  ctime";
+			String StrSql="select proname,sum(price) as sumprice,sum(procount) as sumcount from v_sale where DATE_FORMAT(ctime,'%Y') =? GROUP BY proname";
+			String cyear=request.getParameter("cyear");
+			List<Object> params= new ArrayList<Object>();
+			params.add(cyear);
+			DBHelper db=new DBHelper();
+			List<Map<String, Object>> reslist = null;
+			String html="";
+			//{"datamonths":["1月","2月","3月"],"dataitems":[{"":value,"":value}]}
+			try {
+				reslist=db.executeQuery(StrSql, params);
+				String html_1="[";
+				String html_2="[";
+				int i=1;
+				for (Map<String, Object> m : reslist) {
+					if(i==reslist.size())
+					{
+						html_1+="\""+m.get("proname")+"\"";
+						html_2+="{\"name\":\""+m.get("proname")+"\",\"value\":"+m.get("sumcount")+"}";
+					}
+					else
+					{
+						html_1+="\""+m.get("proname")+"\",";
+						html_2+="{\"name\":\""+m.get("proname")+"\",\"value\":"+m.get("sumcount")+"},";
+					}
+					i++;
+				}
+
+				html_1+="]";
+				html_2+="]";
+				html="{\"data1\":"+html_1+",\"data2\":"+html_2+"}";
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}		
+			response.setCharacterEncoding("utf-8");
+			response.setContentType("text/json;charset=utf-8");
+			response.getWriter().write(html);
+			
+		}
+		//12每月退换货数量报表
+		protected void getSalereturnExByProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			//String StrSql="SELECT DATE_FORMAT(ctime,'%Y-%m') as ctime,sum(sumprice) as sumprice FROM tborderhead where year(ctime)=? GROUP BY  ctime";
+			String StrSql="select tbproname,sum(tbrtuExnum) as sumcount from tbreturnex where DATE_FORMAT(tbcurrtime,'%Y') =? GROUP BY tbproname";
+			String cyear=request.getParameter("cyear");
+			List<Object> params= new ArrayList<Object>();
+			params.add(cyear);
+			DBHelper db=new DBHelper();
+			List<Map<String, Object>> reslist = null;
+			String html="";
+			//{"datamonths":["1月","2月","3月"],"dataitems":[{"":value,"":value}]}
+			try {
+				reslist=db.executeQuery(StrSql, params);
+				String html_1="[";
+				String html_2="[";
+				int i=1;
+				for (Map<String, Object> m : reslist) {
+					if(i==reslist.size())
+					{
+						html_1+="\""+m.get("tbproname")+"\"";
+						html_2+="{\"name\":\""+m.get("tbproname")+"\",\"value\":"+m.get("sumcount")+"}";
+					}
+					else
+					{
+						html_1+="\""+m.get("tbproname")+"\",";
+						html_2+="{\"name\":\""+m.get("tbproname")+"\",\"value\":"+m.get("sumcount")+"},";
+					}
+					i++;
+				}
+
+				html_1+="]";
+				html_2+="]";
+				html="{\"data1\":"+html_1+",\"data2\":"+html_2+"}";
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}		
+			response.setCharacterEncoding("utf-8");
+			response.setContentType("text/json;charset=utf-8");
+			response.getWriter().write(html);
+			
+		}
 	/*******************销售开单开始*************************/
 	protected void saleaddtocarbatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String idstr=request.getParameter("idstr");
