@@ -59,6 +59,8 @@ public class editpassword extends HttpServlet {
 		if(list.size()>0)
 		{
 			//旧密码输入正确
+			request.getSession().setAttribute("currentuser", list.get(0));
+			tblogopt.addmsg(1, "正常修改密码", request);
 			String strSql2=" update tbusers set password=? where id=? "; 
 			List<Object> params1 = new ArrayList<Object>();
 			params1.add(newpassword);
@@ -74,10 +76,12 @@ public class editpassword extends HttpServlet {
 		else
 		{
 			//旧密码输入错误，直接跳转回原来的修改页面
+			String msg="修改密码失败,旧密码为："+oldpassword;
+			tblogopt.addmsg(3, msg, request);
 			response.setCharacterEncoding("utf-8");
 	   		response.setContentType("text/html;charset=utf-8");
-	   		response.getWriter().write("<font color='green'>修改失败,请重新填写原始密码!</font>");
-	   		response.setHeader("Refresh", "3;URL="+request.getContextPath()+"/admin/editpassword.jsp");
+	   		response.getWriter().write("<font color='red'>修改失败,2秒之后发生跳转!</font>");
+	   		response.setHeader("Refresh", "2;URL="+request.getContextPath()+"/admin/editpassword.jsp");
 		}
 		
 	}

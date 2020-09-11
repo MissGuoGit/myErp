@@ -53,13 +53,18 @@ public class login extends HttpServlet {
 		{
 			//currentmember
 			request.getSession().setAttribute("currentuser", userlist.get(0));
+			tblogopt.addmsg(1, "正常登陆系统", request);
 			response.sendRedirect("/myerp/admin/default.jsp");
 			
 		}
 		else
 		{
-			request.setAttribute("msg", "用户名或密码错误");
-			request.getRequestDispatcher("/admin/login.jsp").forward(request, response);
+			String msg="登陆系统失败,用户名为："+username+"密码为"+password;
+			tblogopt.addmsg(3, msg, request);
+			response.setCharacterEncoding("utf-8");
+	   		response.setContentType("text/html;charset=utf-8");
+	   		response.getWriter().write("<font color='red'>登陆失败,2秒之后发生跳转!</font>");
+	   		response.setHeader("Refresh", "2;URL="+request.getContextPath()+"/admin/login.jsp");
 		}
 	}
 
