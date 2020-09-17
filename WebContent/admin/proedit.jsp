@@ -18,7 +18,7 @@
 	</head>
 	<body>
 		<form action="proedit" method="post" enctype="multipart/form-data">
-			<p class="path">当前位置：夜鹰进销存系统/商品中心/编辑商品</p>
+			<p class="path">当前位置：缇梵纪进销存系统/商品中心/编辑商品</p>
 			<table border="0" cellspacing="0" cellpadding="0" class="tb">
 				<tr>
 					<td class="lable">类别</td><td id="typeidbox" data-typeid="<%=objbyid.get("typeid").toString()%>">

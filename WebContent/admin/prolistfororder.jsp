@@ -15,7 +15,7 @@
 List<Map<String, Object>> list = (List<Map<String, Object>>)request.getAttribute("list");
 String pagestr = (String)request.getAttribute("pagestr");
 %>
-<p class="path">当前位置:/夜鹰进销存系统/进货管理/商品列表</p>
+<p class="path">当前位置:/缇梵纪进销存系统/进货管理/商品列表</p>
 
 <table border="0" cellspacing="0" cellpadding="0" class="tb tblist">
        <tr>

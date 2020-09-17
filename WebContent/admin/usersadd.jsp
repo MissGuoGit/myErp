@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<p class="path">当前位置：夜鹰进销存管理系统/系统配置/新增用户</p>
+<p class="path">当前位置：缇梵纪销存管理系统/系统配置/新增用户</p>
 <form action="../usersadd" method="post">
 <table border="0" cellspacing="0" cellpadding="0" class="tb">
 	<tr><td class="lable">用户名</td><td><input type="text" name="username"/></td></tr>

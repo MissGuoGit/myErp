@@ -67,7 +67,7 @@ Map<String, Object> obj=(Map<String,Object>)request.getSession().getAttribute("c
 		</style>
 	</head>
 	<body>
-		<p class="path">当前位置:/珠宝进销存系统/销售管理/销售订单/</p>
+		<p class="path">当前位置:/缇梵纪进销存系统/销售管理/销售订单/</p>
 		<table border="0" cellspacing="0" cellpadding="0" class="tb tblist" id="cartable">
 			<tr><td style="width: 150px;height: 30px;">商品图片</td><td>商品名称</td><td>单价</td><td style="width:156px;">数量</td><td style="width: 150px;">小计</td><td style="width:50px;">操作</td></tr>
 			<%for (Map<String, Object> m : carlistall) { %>

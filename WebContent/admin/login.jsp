@@ -9,13 +9,15 @@
 %>
 <!DOCTYPE html>
 <html>
-<head>  
+<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>重庆工商大学融智学院实训项目-进销存管理系统V1.0</title>
 	<link rel="stylesheet" type="text/css" href="../css/comm.css" />
 	<style type="text/css">
 		body {
-				background-color: #0044C0;
+				background-image: url(../img/ppt1122.jpg);
+				background-size:100% 100%;
+				background-attachment:fixed;
 				font-family: 'Microsoft YaHei';
 				font-size: 14px;
 				background-repeat: no-repeat;
@@ -31,7 +33,7 @@
 				border: 0;
 				border-radius: 3px;
 				color: white;
-				background-image: url(../img/loginbg.png);
+				
 			}
 			
 			#logincontainer p {
@@ -118,6 +120,7 @@
 				margin-top:25px;
 				font-size:26px;
 				text-align: center;
+				margin-left: 150px;
 			}
 			
 			.loginform{
@@ -129,7 +132,7 @@
 <body>
     <form  method="post" action="/myerp/login">
     	<div id="logincontainer">
-			<p class="title">重庆融智实训项目-进销存管理系统V1.0</p>
+			<p class="title">珠宝进销存管理系统V1.0</p>
 			<div class="loginform">
 				<p id="msg"><strong><%=msg%></strong></p>
 				<p> <span class="lablespan">用户名:</span><span><input name="username" type="text" id="username" /></span></p>
@@ -159,6 +162,8 @@
             }
         });
     </script>
+
+
 </body>
 </html>
     

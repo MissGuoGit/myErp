@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="../css/comm.css"/>
 </head>
 <body>
-<p class="path">当前位置：夜鹰进销存管理系统/系统配置/密码修改</p>
+<p class="path">当前位置：缇梵纪进销存管理系统/系统配置/密码修改</p>
 <form action="../editpassword" method="post">
 <table border="0" cellspacing="0" cellpadding="0" class="tb">
 	<tr><td class="lable">旧密码</td><td><input type="text" name="oldpassword" id="oldpassword"/></td></tr>

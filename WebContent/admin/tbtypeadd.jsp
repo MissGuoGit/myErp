@@ -8,7 +8,7 @@
 </head>
 <body>
 <%request.setCharacterEncoding("utf-8");%>
-<p class="path">当前位置：夜鹰进销存管理系统/商品中心/新增类别</p>
+<p class="path">当前位置：缇梵纪进销存管理系统/商品中心/新增类别</p>
 <form action="../tbtypeadd" method="post">
 <input type="hidden" name="parentid" value="<%=request.getParameter("pid")%>"/>
 <table border="0" cellspacing="0" cellpadding="0" class="tb">

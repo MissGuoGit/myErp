@@ -5,12 +5,46 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style tyle="text/css">
+   ul{
+	list-style: none;
+}
+   
+.table{
+	border-collapse: collapse;
+}
+.table tr{
+
+}
+.table tr td{
+    border:solid 1px #ccc;
+	width:300px;
+	text-align:left;
+	padding:5px;
+}
+
+.table tr .lable{
+    width:100px;
+}
+.table tr td input{
+height:20px;
+}
+#btnsave{
+  width:45px;
+  height:25px;
+  line-height:25px;
+  text-align:center;
+}
+#btnsearch{
+   margin:7px 0 0 10px;
+}
+</style>
 </head>
 <body>
-<p class="path">当前位置：珠宝进销存管理系统/退换货管理/退换货信息录入</p>
+<p class="path">当前位置：缇梵纪进销存管理系统/退换货管理/退换货信息录入</p>
 <form action="../returnExadd" method="post">
 <input type="hidden" name="tbproid" id="tbproid"/>
-<table border="0" cellspacing="0" cellpadding="0" class="tb">
+<table border="0" cellspacing="0" cellpadding="0" class="table">
 	<tr><td class="lable">商品编号</td><td><input type="text" name="tbpronum" id="tbpronum"/><input type="button" id="btnsearch" value="查询" style="width:50px;height:24px;"/> <span class="errormsg" id="errormsg"></span></td></tr>
 	<tr><td class="lable">商品名称</td><td><input type="text" name="tbproname" id="tbproname" readonly="readonly"/></td></tr>
 	<tr><td class="lable">商品类别</td><td><input type="text" name="tbpropath" id="tbpropath"/></td></tr>
@@ -19,7 +53,7 @@
 	<tr><td class="lable">顾客姓名</td><td><input type="text" name="tbcusname"/></td></tr>
 	<tr><td class="lable">顾客电话</td><td><input type="text" name="tbcustel"/></td></tr>
 	<tr><td class="lable">顾客地址</td><td><input type="text" name="tbcusadds"/></td></tr>
-	<tr><td class="lable"><input type="radio" value="退货" name="opttype" checked="checked"/>退货  <input type="radio" value="换货" name="opttype"/>换货</td></tr>	
+	<tr><td class="lable change"><input type="radio" value="退货" name="opttype" checked="checked"/>退货 </td><td class="lable"> <input type="radio" value="换货" name="opttype"/>换货</td></tr>	
 	<tr><td class="lable">&nbsp;</td><td><input type="submit" name="btnsave" value="保存" id="btnsave"/></td></tr>
 	
 </table>

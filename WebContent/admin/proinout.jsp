@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<p class="path">当前位置：夜鹰进销存管理系统/库存管理/商品<%=request.getParameter("t").equals("1")?"入库":"出库" %> </p>
+<p class="path">当前位置：缇梵纪进销存管理系统/库存管理/商品<%=request.getParameter("t").equals("1")?"入库":"出库" %> </p>
 <form action="../proinout" method="post">
 <input type="hidden" name="t" value="<%=request.getParameter("t")%>"/>
 <input type="hidden" name="tbproid" id="tbproid"/>

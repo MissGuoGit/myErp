@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>夜鹰进销存管理系统V1.0</title>
+	<title>缇梵纪进销存管理系统V1.0</title>
 </head>
 <frameset rows="135,*" frameborder="no" border="0" framespacing="0">
     <frame src="../top" name="topFrame" scrolling="No" noresize="noresize" id="topFrame"></frame>

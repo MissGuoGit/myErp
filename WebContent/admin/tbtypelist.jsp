@@ -64,7 +64,7 @@ a{
 </head>
 <body>
 
-<p class="path">当前位置：夜鹰进销存系统 >商品中心>类别列表</p>
+<p class="path">当前位置：缇梵纪进销存系统 >商品中心>类别列表</p>
 
 <table class="tblist"  cellspacing="0" cellpadding="0">
 <tr><td style="width:60px;">ID</td><td style="width:200px;">类别名称</td><td style="width:120px;">父类别</td><td >路径</td><td style="width:120px;">深度</td><td style="width:300px;">操作</td></tr>

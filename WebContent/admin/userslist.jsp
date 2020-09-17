@@ -52,7 +52,7 @@ a{
 }
 
 .tblist tr:hover{
-	background-color:#ff6600;
+	background-color:#4a4e69;
 	color:#fff;
 }
 
@@ -64,7 +64,7 @@ a{
 </head>
 <body>
 
-<p class="path">当前位置：夜鹰进销存系统 >用户中心>用户列表</p>
+<p class="path">当前位置：缇梵纪进销存系统 >用户中心>用户列表</p>
 
 <table class="tblist"  cellspacing="0" cellpadding="0">
 <tr><td style="width:60px;">ID</td><td style="width:120px;">用户名</td><td style="width:120px;">密码</td><td style="width:120px;">电话</td><td>备注</td><td style="width:120px;">真实姓名</td><td style="width:300px;">操作</td></tr>

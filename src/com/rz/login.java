@@ -40,6 +40,8 @@ public class login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username=request.getParameter("username"); 
 		String password=request.getParameter("password"); 
+		username=common.sqlValidate(username);
+		password=common.sqlValidate(password);
 		DBHelper Dal=new DBHelper();
 		String strSql=" select * from tbusers where username='"+username+"' and password='"+password+"'"; 
 		List<Object> params = new ArrayList<Object>();

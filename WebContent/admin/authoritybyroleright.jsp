@@ -63,7 +63,7 @@ a{
 </style>
 </head>
 <body>
-<p class="path">当前位置：夜鹰进销存系统 >权限配置>已经分配的权限</p>
+<p class="path">当前位置：缇梵纪进销存系统 >权限配置>已经分配的权限</p>
 <table class="tblist"  cellspacing="0" cellpadding="0">
 <tr><td style="width:60px;"><input id="cbSelectAll" type="checkbox"/></td><td style="width:60px;">ID</td><td>菜单名称</td></tr>
 <%for (Map<String, Object> m : list) { %>

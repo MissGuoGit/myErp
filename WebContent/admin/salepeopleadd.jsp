@@ -5,9 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/comm.css"/>
 </head>
 <body>
-<p class="path">当前位置：珠宝进销存管理系统/退换货管理/退换货信息录入</p>
+<p class="path">当前位置：缇梵纪进销存管理系统/经销商管理/新增经销商</p>
 <form action="../salepeopleadd" method="post">
 <input type="hidden" name="tbproid" id="tbproid"/>
 <table border="0" cellspacing="0" cellpadding="0" class="tb">

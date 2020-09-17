@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="css/comm.css"/>
 </head>
 <body>
-<p class="path">当前位置：夜鹰进销存管理系统/系统配置/编辑用户</p>
+<p class="path">当前位置：缇梵纪进销存管理系统/系统配置/编辑用户</p>
 <form action="usersedit" method="post">
 <input type="hidden" name="id" value="<%=objbyid.get("id")%>"/>
 <table class="tb">

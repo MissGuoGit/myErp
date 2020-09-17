@@ -15,7 +15,7 @@ String pagestr = (String)request.getAttribute("pagestr");
 <link rel="stylesheet" type="text/css" href="./css/comm.css"/>
 </head>
 <body>
-<p class="path">商城后台系统/退换货管理/退换货订单</p>
+<p class="path">缇梵纪进销存系统/退换货管理/退换货订单</p>
 
 <table border="0" cellspacing="0" cellpadding="0" class="tb tblist">
        <tr>

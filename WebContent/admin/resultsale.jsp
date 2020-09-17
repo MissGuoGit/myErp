@@ -22,7 +22,7 @@
 		</style>
 	</head>
 	<body>
-		<p class="path">当前位置:/珠宝进销存系统/销售管理/销售状态</p>
+		<p class="path">当前位置:/缇梵纪进销存系统/销售管理/销售状态</p>
 		<div id="main">
 			<p>下单成功!</p>
 			<a href="../orderheadlist" class="goon" target="main">查看销售订单</a>

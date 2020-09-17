@@ -15,7 +15,7 @@
 List<Map<String, Object>> list = (List<Map<String, Object>>)request.getAttribute("list");
 String pagestr = (String)request.getAttribute("pagestr");
 %>
-<div class="path">当前位置:/夜鹰进销存系统/库存管理/库存查询             <span class="rightbox"><input type="text" id="tbkey"/><input type="button" id="btnsearch" value="查询"/></span></div>
+<div class="path">当前位置:/缇梵纪进销存系统/库存管理/库存查询             <span class="rightbox"><input type="text" id="tbkey"/><input type="button" id="btnsearch" value="查询"/></span></div>
 
 <table border="0" cellspacing="0" cellpadding="0" class="tb tblist">
        <tr>

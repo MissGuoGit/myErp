@@ -11,14 +11,14 @@ List<Map<String, Object>> list = (List<Map<String, Object>>)request.getAttribute
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>夜鹰进销存管理系统V1.0</title>
+		<title>缇梵纪进销存管理系统V1.0</title>
 		<link rel="stylesheet" type="text/css" href="css/comm.css" />
 
 		<style type="text/css">
 			.linear {
 				width: 100%;
 				height: 100px;
-				background-color: #0044C0;
+				background-color:#57504e;
 			}
 			
 			.nav {
@@ -26,14 +26,14 @@ List<Map<String, Object>> list = (List<Map<String, Object>>)request.getAttribute
 				height: 34px;
 				list-style: none;
 				background-color: white;
-				border-bottom: solid 1px #0044C0;
+				border-bottom: solid 1px #333;
 			}
 			
 			.nav li {
 				float: left;
 				height: 30px;
 				position: relative;
-				background-color: #0044C0;
+				background-color: #4a4e69;
 				margin-right: 3px;
 				margin-top: 2px;
 				border-top-left-radius: 0px;
@@ -63,7 +63,7 @@ List<Map<String, Object>> list = (List<Map<String, Object>>)request.getAttribute
 				padding-top: 10px;
 				color: white;
 				border-radius: 5px;
-				background-color:#397FFF;
+				background-color:#818396;
 				border-bottom-right-radius: 0;
 				border-top-right-radius: 0;
 				box-shadow: 0 0 10px 1px #fff;
@@ -95,7 +95,7 @@ List<Map<String, Object>> list = (List<Map<String, Object>>)request.getAttribute
 	<body>
 		
 			<div class="linear">
-				<img src="./img/logo.png" style="height:100px;" />
+				<img src="./img/logo1111.jpg" style="height:100px;" />
 				<div class="timeanduser">
 					<p id="timecontainer"></p>
 					<p id="currentuser">当前用户: 【<%= ((Map<String,Object>)session.getAttribute("currentuser")).get("truename")%>】<a href="logout" target="_top" id="logout" title="退出系统"><img src="./img/logout5.png"></a> </p>

@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<form action="../proadd" method="post" enctype="multipart/form-data">
-			<p class="path">当前位置：夜鹰进销存系统/产品中心/新增商品</p>
+			<p class="path">当前位置：缇梵纪进销存系统/产品中心/新增商品</p>
 			<table border="0" cellspacing="0" cellpadding="0" class="tb">
 				<tr>
 					<td class="lable">类别</td><td id="typeidbox">
