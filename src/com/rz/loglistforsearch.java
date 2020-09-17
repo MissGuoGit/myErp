@@ -34,9 +34,13 @@ public class loglistforsearch extends HttpServlet {
 		int currentpage = 1;
 		request.setCharacterEncoding("utf-8");
 		String key=request.getParameter("key");
-		if(!(key==null||key.equals("")))
+		if(!(key==null||key.equals("")||key.equals("null")))
 		{
 			key = new String(key.getBytes("iso-8859-1"), "utf-8");//解决中文乱码的问题
+		}
+		else
+		{
+			key="";
 		}
 		try {
 			String p = request.getParameter("p");
